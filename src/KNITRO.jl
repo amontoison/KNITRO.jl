@@ -7,23 +7,13 @@ module KNITRO
 
 import Libdl
 import MathOptInterface as MOI
+using KNITRO_jll
 
-const _DEPS_FILE = joinpath(dirname(@__FILE__), "..", "deps", "deps.jl")
-if isfile(_DEPS_FILE)
-    include(_DEPS_FILE)
-else
-    error("KNITRO.jl not properly installed. Please run `] build KNITRO`")
-end
-
-has_knitro() = endswith(libknitro, Libdl.dlext)
+has_knitro() = true
 
 function __init__()
-    libiomp5 = replace(libknitro, "libknitro" => "libiomp5")
-    if isfile(libiomp5)
-        Libdl.dlopen(libiomp5)
-    end
-    version = has_knitro() ? knitro_version() : v"0.0.0"
-    if version != v"0.0.0" && version < v"11.0"
+    version = knitro_version()
+    if version < v"11.0"
         error(
             "You have installed version $version of Artelys " *
             "Knitro, which is not supported by KNITRO.jl. We require a " *

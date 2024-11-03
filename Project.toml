@@ -4,10 +4,12 @@ authors = ["Artelys", "jump-dev"]
 version = "0.14.4"
 
 [deps]
+KNITRO_jll = "831d614f-d714-4d9c-a464-d4b959d5df6e"
 Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 MathOptInterface = "b8f27783-ece8-5eb3-8dc8-9495eed66fee"
 
 [compat]
+KNITRO_jll = "14.1.0"
 Libdl = "<0.0.1, 1.6"
 MathOptInterface = "1.17"
 Printf = "<0.0.1, 1.6"
