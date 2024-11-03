@@ -4,6 +4,7 @@ authors = ["Artelys", "jump-dev"]
 version = "0.14.8"
 
 [deps]
+KNITRO_jll = "831d614f-d714-4d9c-a464-d4b959d5df6e"
 Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 
 [weakdeps]
@@ -14,6 +15,7 @@ KNITROMathOptInterfaceExt = ["MathOptInterface"]
 
 [compat]
 Libdl = "1"
+KNITRO_jll = "15.0.0"
 MathOptInterface = "1.17"
 Printf = "1"
 SparseArrays = "1"
